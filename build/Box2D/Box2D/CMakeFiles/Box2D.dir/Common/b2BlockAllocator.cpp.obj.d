@@ -1,0 +1,26 @@
+Box2D/Box2D/CMakeFiles/Box2D.dir/Common/b2BlockAllocator.cpp.obj: \
+ /home/vighnesh9388/vita-claw/openclaw/Box2D/Box2D/Common/b2BlockAllocator.cpp \
+ /home/vighnesh9388/vita-claw/openclaw/Box2D/Box2D/../Box2D/Common/b2BlockAllocator.h \
+ /home/vighnesh9388/vita-claw/openclaw/Box2D/Box2D/../Box2D/Common/b2Settings.h \
+ /home/vighnesh9388/vitasdk/lib/gcc/arm-vita-eabi/10.3.0/include/stddef.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/assert.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/_ansi.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/newlib.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/_newlib_version.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/sys/config.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/machine/ieeefp.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/sys/features.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/bits/posix_opt.h \
+ /home/vighnesh9388/vitasdk/lib/gcc/arm-vita-eabi/10.3.0/include-fixed/limits.h \
+ /home/vighnesh9388/vitasdk/lib/gcc/arm-vita-eabi/10.3.0/include/float.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/string.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/sys/reent.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/_ansi.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/sys/_types.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/machine/_types.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/machine/_default_types.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/sys/lock.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/sys/cdefs.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/sys/_locale.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/strings.h \
+ /home/vighnesh9388/vitasdk/arm-vita-eabi/include/sys/string.h

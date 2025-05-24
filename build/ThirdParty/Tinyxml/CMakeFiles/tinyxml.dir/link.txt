@@ -1,0 +1,2 @@
+/home/vighnesh9388/vitasdk/bin/arm-vita-eabi-ar qc libtinyxml.a CMakeFiles/tinyxml.dir/tinyxml.cpp.obj CMakeFiles/tinyxml.dir/tinyxmlerror.cpp.obj CMakeFiles/tinyxml.dir/tinyxmlparser.cpp.obj
+/home/vighnesh9388/vitasdk/bin/arm-vita-eabi-ranlib libtinyxml.a

@@ -1,0 +1,2 @@
+/home/vighnesh9388/vitasdk/bin/arm-vita-eabi-ar qc liblibwap.a CMakeFiles/libwap.dir/AniFile.cpp.obj CMakeFiles/libwap.dir/Miniz.cpp.obj CMakeFiles/libwap.dir/PalFile.cpp.obj CMakeFiles/libwap.dir/PidFile.cpp.obj CMakeFiles/libwap.dir/RezArchiveFile.cpp.obj CMakeFiles/libwap.dir/Util.cpp.obj CMakeFiles/libwap.dir/WwdFile.cpp.obj CMakeFiles/libwap.dir/XmiFile.cpp.obj
+/home/vighnesh9388/vitasdk/bin/arm-vita-eabi-ranlib liblibwap.a
