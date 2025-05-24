@@ -11,6 +11,7 @@ This is a WIP. The `.vpk` currently compiles but **crashes on launch**.
 - [VitaSDK](https://vitasdk.org/) installed and set up
 - CMake ≥ 3.10
 - A Vita with HENkaku or similar homebrew support
+- CLAW.REZ
 
 ---
 
