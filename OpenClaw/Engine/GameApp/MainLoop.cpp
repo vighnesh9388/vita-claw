@@ -24,16 +24,23 @@ int RunGameEngine(int argc, char** argv)
     userDirectory = "/sdcard/claw/";
 #elif defined(__WINDOWS__)
     userDirectory = "";
+#elif defined(__vita__)
+// Vita-specific save/config path (adjust if needed)
+userDirectory = "ux0:data/openclaw/";
 #else
-    const char* homedir;
+const char* homedir;
 
-    if ((homedir = getenv("HOME")) == NULL) 
-    {
-        homedir = getpwuid(getuid())->pw_dir;
-    }
-    assert(homedir != NULL);
+if ((homedir = getenv("HOME")) == NULL) 
+{
+    #ifndef __vita__
+    homedir = getpwuid(getuid())->pw_dir;
+    #else
+    homedir = "";
+    #endif
+}
+assert(homedir != NULL);
 
-    userDirectory = std::string(homedir) + "/.config/openclaw/";
+userDirectory = std::string(homedir) + "/.config/openclaw/";
 
 #endif
 

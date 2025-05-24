@@ -3,6 +3,10 @@
 #include "Image.h"
 #include "../SharedDefines.h"
 
+#ifdef __PSP2__
+#define __VITA__
+#endif
+
 Image::Image()
     :
     m_Width(0),
@@ -45,34 +49,23 @@ SDL_Rect Image::GetPositonRect(int32_t x, int32_t y)
 static void PutPixel(SDL_Surface *surface, int x, int y, Uint32 pixel)
 {
     int bpp = surface->format->BytesPerPixel;
-    /* Here p is the address to the pixel we want to set */
     Uint8 *p = (Uint8 *)surface->pixels + y * surface->pitch + x * bpp;
 
     switch (bpp) {
-    case 1:
-        *p = pixel;
-        break;
-
-    case 2:
-        *(Uint16 *)p = pixel;
-        break;
-
+    case 1: *p = pixel; break;
+    case 2: *(Uint16 *)p = pixel; break;
     case 3:
         if (SDL_BYTEORDER == SDL_BIG_ENDIAN) {
             p[0] = (pixel >> 16) & 0xff;
             p[1] = (pixel >> 8) & 0xff;
             p[2] = pixel & 0xff;
-        }
-        else {
+        } else {
             p[0] = pixel & 0xff;
             p[1] = (pixel >> 8) & 0xff;
             p[2] = (pixel >> 16) & 0xff;
         }
         break;
-
-    case 4:
-        *(Uint32 *)p = pixel;
-        break;
+    case 4: *(Uint32 *)p = pixel; break;
     }
 }
 
@@ -87,9 +80,8 @@ SDL_Texture* Image::GetTextureFromPid(WapPid* pid, SDL_Renderer* renderer)
     SDL_Surface* surface = Util::CreateRGBSurface(0, width, height, 32);
     assert(surface != NULL);
 
-    uint32_t colorIdx;
     uint32_t colorsCount = pid->colorsCount;
-    for (colorIdx = 0; colorIdx < colorsCount; colorIdx++)
+    for (uint32_t colorIdx = 0; colorIdx < colorsCount; colorIdx++)
     {
         WAP_ColorRGBA color = pid->colors[colorIdx];
         uint32_t x = colorIdx % width;
@@ -102,7 +94,6 @@ SDL_Texture* Image::GetTextureFromPid(WapPid* pid, SDL_Renderer* renderer)
     assert(texture != NULL);
 
     SDL_FreeSurface(surface);
-
     return texture;
 }
 
@@ -120,6 +111,11 @@ Image* Image::CreateImage(WapPid* pid, SDL_Renderer* renderer)
 
 Image* Image::CreatePcxImage(char* rawBuffer, uint32_t size, SDL_Renderer* renderer, bool useColorKey, SDL_Color colorKey)
 {
+#ifdef __VITA__
+    // SDL_image on Vita doesn't support PCX well unless compiled with support
+    LOG("Skipping PCX image load on Vita.");
+    return nullptr;
+#else
     Image* pImage = new Image();
     SDL_RWops* pRWops = SDL_RWFromMem((void*)rawBuffer, size);
     SDL_Surface* pSurface = IMG_LoadPCX_RW(pRWops);
@@ -154,6 +150,7 @@ Image* Image::CreatePcxImage(char* rawBuffer, uint32_t size, SDL_Renderer* rende
     }
 
     return pImage;
+#endif
 }
 
 Image* Image::CreatePngImage(char* rawBuffer, uint32_t size, SDL_Renderer* renderer)
